@@ -85,20 +85,17 @@ int main() {
             }
         }
         else if (choice == 4) {
-            // Exécuter les tâches ici
             size_t taskCount = taskManager.getTaskCount();
-
-            for (size_t i = 0; i < taskCount; ++i) {
-                const Task& task = taskManager.getTask(i);
-
-                // Utilisez les propriétés de la tâche pour contrôler le clic automatique
+            int i;
+            std::cout << "Indice de la tache : ";
+            std::cin >> i ;
+           
+            const Task& task = taskManager.getTask(i);
                 for (int cycle = 0; cycle < task.getNumCycles(); ++cycle) {
-                    simulateMouseClick(500, 500); // Remplacez par les coordonnées de la tâche
+                    simulateMouseClick(500, 500);
                     Sleep(task.getInterval());
                 }
-            }
-
-            std::cout << "Taches executees avec succes.\n";
+            std::cout << "la tache a ete executee avec succes.\n";
         }
         else if (choice == 5) {
             break;

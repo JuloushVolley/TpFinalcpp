@@ -1,5 +1,5 @@
 #include "task.h"
-
+#include <iostream>
 Task::Task(const std::string& n, const std::string& p, int i, int nc, int d, const std::string& r)
     : name(n), path(p), interval(i), numCycles(nc), duration(d), resolution(r) {}
 
@@ -42,7 +42,7 @@ const Task& TaskManager::getTask(int index) const {
         return tasks[index];
     }
     else {
-        // Vous pouvez retourner une tâche par défaut ou lever une exception en cas d'index invalide.
+        std::cout << " veulliez choisir un autre indice:"<< std::endl;
     }
 }
 
